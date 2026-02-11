@@ -1,0 +1,11 @@
+{
+  "name": "houjin-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "meilisearch": "latest",
+    "express": "latest",
+    "cors": "latest"
+  }
+}
