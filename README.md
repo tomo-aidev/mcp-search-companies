@@ -1,0 +1,90 @@
+GitHubへのアップロード準備ですね！
+
+以下の内容をコピーして、`README.md` という名前のファイルで保存してください。コードブロックの右上にあるコピーボタンを使うと便利です。
+
+```markdown
+# 🏢 Houjin Search MCP Server (Japan)
+
+このMCP（Model Context Protocol）サーバーは、日本国内の約500万件の法人情報を瞬時に検索できるAIツールです。[houjin.goo.to](https://houjin.goo.to) のデータを活用し、ClaudeなどのAIが直接最新の法人番号や住所を取得することを可能にします。
+
+## ✨ 特徴
+- **膨大なデータ**: 約500万件の法人情報をMeilisearchによる高速検索で提供。
+- **柔軟なクエリ**: 会社名、住所、法人番号、インボイス番号など、曖昧な指示からも検索可能。
+- **SSE対応**: 安全なWeb標準（Server-Sent Events）プロトコルを採用。
+
+## 🚀 使い方 (Claude Desktop)
+
+`claude_desktop_config.json` の `mcpServers` セクションに以下の設定を追加してください。
+
+```json
+{
+  "mcpServers": {
+    "houjin-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sse-client",
+        "[https://houjin.goo.to/mcp/sse](https://houjin.goo.to/mcp/sse)"
+      ]
+    }
+  }
+}
+
+```
+
+## 🛠 提供されるツール
+
+### `search_companies`
+
+キーワード（会社名、住所、法人番号等）から法人情報を検索します。
+
+* **引数**:
+* `query` (string, required): 検索キーワード（例：「株式会社大塚商会」「東京都千代田区」）
+* `limit` (number, optional): 取得件数（デフォルト: 10）
+
+
+
+## 💡 活用例
+
+* 「株式会社大塚商会のインボイス番号を教えて」
+* 「東京都日野市にある合同会社を5件リストアップして」
+* 「法人番号 1010001012983 の情報を表示して」
+
+## 🛠 開発者向けセットアップ
+
+### 環境変数
+
+実行には以下の環境変数が必要です。
+
+* `MEILI_MASTER_KEY`: Meilisearchのマスターキー（または検索用キー）
+
+### Dockerでの起動
+
+```bash
+docker build -t houjin-mcp-server .
+docker run -d -p 3000:3000 -e MEILI_MASTER_KEY="your_key" --network host houjin-mcp-server
+
+```
+
+---
+
+Powered by [houjin.goo.to](https://houjin.goo.to)
+
+```
+
+---
+
+### 次のステップ
+1. **GitHubにリポジトリ作成**: `houjin-mcp-server` という名前で新しいリポジトリを作ります。
+2. **ファイルをアップロード**: 以下の4つをアップロードすれば完璧です。
+   - `README.md` (今作ったもの)
+   - `index.js` (APIキーを `process.env` に変えたもの)
+   - `package.json`
+   - `Dockerfile`
+
+
+
+アップロードが終わったら、**GitHubリポジトリのURL**を教えてください！
+Smithery（MCPサーバーのカタログサイト）への登録をお手伝いします。これをやれば、世界中のユーザーがあなたのツールを見つけられるようになります！
+
+```
