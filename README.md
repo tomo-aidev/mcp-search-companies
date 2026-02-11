@@ -1,4 +1,3 @@
-```markdown
 # 🏢 Houjin Search MCP Server (Japan)
 
 このMCP（Model Context Protocol）サーバーは、日本国内の約500万件の法人情報を瞬時に検索できるAIツールです。[houjin.goo.to](https://houjin.goo.to) のデータを活用し、ClaudeなどのAIが直接最新の法人番号や住所を取得することを可能にします。
@@ -43,26 +42,8 @@
 ## 💡 活用例
 
 * 「株式会社大塚商会のインボイス番号を教えて」
-* 「東京都日野市にある合同会社を5件リストアップして」
+* 「東京都千代田区にある合同会社を5件リストアップして」
 * 「法人番号 1010001012983 の情報を表示して」
-
-## 🛠 開発者向けセットアップ
-
-### 環境変数
-
-実行には以下の環境変数が必要です。
-
-* `MEILI_MASTER_KEY`: Meilisearchのマスターキー（または検索用キー）
-
-### Dockerでの起動
-
-```bash
-docker build -t houjin-mcp-server .
-docker run -d -p 3000:3000 -e MEILI_MASTER_KEY="your_key" --network host houjin-mcp-server
-
-```
-
----
 
 Powered by [houjin.goo.to](https://houjin.goo.to)
 
