@@ -1,7 +1,3 @@
-GitHubへのアップロード準備ですね！
-
-以下の内容をコピーして、`README.md` という名前のファイルで保存してください。コードブロックの右上にあるコピーボタンを使うと便利です。
-
 ```markdown
 # 🏢 Houjin Search MCP Server (Japan)
 
@@ -69,22 +65,5 @@ docker run -d -p 3000:3000 -e MEILI_MASTER_KEY="your_key" --network host houjin-
 ---
 
 Powered by [houjin.goo.to](https://houjin.goo.to)
-
-```
-
----
-
-### 次のステップ
-1. **GitHubにリポジトリ作成**: `houjin-mcp-server` という名前で新しいリポジトリを作ります。
-2. **ファイルをアップロード**: 以下の4つをアップロードすれば完璧です。
-   - `README.md` (今作ったもの)
-   - `index.js` (APIキーを `process.env` に変えたもの)
-   - `package.json`
-   - `Dockerfile`
-
-
-
-アップロードが終わったら、**GitHubリポジトリのURL**を教えてください！
-Smithery（MCPサーバーのカタログサイト）への登録をお手伝いします。これをやれば、世界中のユーザーがあなたのツールを見つけられるようになります！
 
 ```
